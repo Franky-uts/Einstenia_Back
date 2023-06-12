@@ -12,6 +12,16 @@ exports.getdata = (req,res) =>{
         })
     })
 }
+
+exports.getSingleData = (req,res) =>{
+    const { id } = req.params
+    model.find({_id: parserId(req.params.id)},(err,doc)=>{
+        res.send({
+            docs:doc
+        })
+    })
+}
+
 exports.getdataSearch = (req,res) =>{
     model.find({Nombre: {$regex:req.params.Nombre}},(err,docs)=>{
         res.send({

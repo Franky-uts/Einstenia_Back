@@ -11,6 +11,10 @@ router.get(
     controlador.getdata
 )
 router.get(
+    `/${path}/:id`,
+    controlador.getSingleData
+)
+router.get(
     `/${path}/search/:Nombre`,
     controlador.getdataSearch
 )
